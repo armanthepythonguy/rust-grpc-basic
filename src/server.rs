@@ -19,7 +19,7 @@ impl Bitcoin for BitcoinService{
         println!("Request = {:?}", req);
         let reply = BtcPaymentResponse{
             success: true,
-            response : "Hello, Payment recieved".into()
+            response : format!("Hello, request recieved from {:?} to {:?} for {:?}BTC", req.from_addr, req.to_addr, req.amount).into()
         };
         Ok(Response::new(reply))
     }
